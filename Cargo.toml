@@ -9,3 +9,8 @@ edition = "2021"
 tokio = { version = "1.34.0", features = ["full"]}
 sqlx = { version = "0.7.2", features = ["postgres", "runtime-tokio-rustls"]}
 chrono = "0.4.31"
+axum = "0.6.20"
+
+[dev-dependencies]
+anyhow = "1.0.75"
+reqwest = "0.11.22"
