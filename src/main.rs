@@ -1,12 +1,18 @@
-use axum::extract::Query;
-use axum::http::StatusCode;
-use axum::response::{Html, IntoResponse};
-use axum::routing::{get, Route};
-use axum::Router;
-use serde::Deserialize;
+use askama::Template;
+use axum::{
+    http::StatusCode,
+    response::{Html, IntoResponse},
+    routing::{get, Router},
+};
 use std::net::SocketAddr;
+use tower_http::services::ServeDir;
 
-mod web;
+#[derive(Debug, Template)]
+#[template(path = "site.html")]
+pub struct SiteTemplate<'a> {
+    pub site_title: &'a str,
+    pub site_body: &'a str,
+}
 
 #[tokio::main]
 async fn main() {
@@ -14,14 +20,16 @@ async fn main() {
     let connectionstring = "postgresql://postgres:password@localhost/test";
     let connpool = sqlx::postgres::PgPool::connect(connectionstring)
         .await
-        .unwrap();
+        .expect("Could not connect to the database");
     sqlx::migrate!("./migrations").run(&connpool).await.unwrap();
 
     // ---- ROUTES ----
-    let routes = Router::new().merge(routes());
+    let routes = Router::new()
+        .merge(routes())
+        .nest_service("/assets", ServeDir::new("assets"));
 
     // ---- SERVER ----
-    let addr = SocketAddr::from(([127, 0, 0, 1], 8080));
+    let addr = SocketAddr::from(([127, 0, 0, 1], 3000));
     println!("listening on {addr}");
 
     axum::Server::bind(&addr)
@@ -31,11 +39,19 @@ async fn main() {
 }
 
 fn routes() -> Router {
-    Router::new().route("/", get(handler))
+    Router::new().route("/", get(site_index))
 }
 
-async fn handler() -> impl IntoResponse {
+async fn site_index() -> impl IntoResponse {
     println!("{:12} - handler", "HANDLER");
 
-    Html("hello")
+    let mut template = SiteTemplate {
+        site_title: "TestSite",
+        site_body: "Testbodyasldjfklsdajflj",
+    };
+
+    match template.render() {
+        Ok(html) => Html(html).into_response(),
+        Err(_) => (StatusCode::INTERNAL_SERVER_ERROR, "try again later").into_response(),
+    }
 }
