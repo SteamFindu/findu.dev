@@ -2,10 +2,15 @@
 <html lang="en">
 	<head>
 		<title>{{ site_title }}</title>
-		<link href="/assets/site.css" rel="stylesheet" type="text/css">
+        <script src="https://unpkg.com/htmx.org@1.9.9" integrity="sha384-QFjmbokDn2DjBjq+fM+8LUIVrAgqcNW2s0PjAxHETgRn9l4fvX31ZxDxvwQnyMOX" crossorigin="anonymous"></script>
+		<link href="/assets/base.css" rel="stylesheet" type="text/css">
 	</head>
 
 	<body>
+        <div id="header">
+        {% block header %}
+        {% endblock header %}
+        </div>
 		<div id="contents">
 		{% block content %}
 		{% endblock content %}

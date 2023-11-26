@@ -8,10 +8,9 @@ use std::net::SocketAddr;
 use tower_http::services::ServeDir;
 
 #[derive(Debug, Template)]
-#[template(path = "site.html")]
+#[template(path = "index.html")]
 pub struct SiteTemplate<'a> {
     pub site_title: &'a str,
-    pub site_body: &'a str,
 }
 
 #[tokio::main]
@@ -21,7 +20,10 @@ async fn main() {
     let connpool = sqlx::postgres::PgPool::connect(connectionstring)
         .await
         .expect("Could not connect to the database");
-    sqlx::migrate!("./migrations").run(&connpool).await.unwrap();
+    sqlx::migrate!("./migrations")
+        .run(&connpool)
+        .await
+        .expect("Failed to run migrations");
 
     // ---- ROUTES ----
     let routes = Router::new()
@@ -43,11 +45,8 @@ fn routes() -> Router {
 }
 
 async fn site_index() -> impl IntoResponse {
-    println!("{:12} - handler", "HANDLER");
-
-    let mut template = SiteTemplate {
-        site_title: "TestSite",
-        site_body: "Testbodyasldjfklsdajflj",
+    let template = SiteTemplate {
+        site_title: "index",
     };
 
     match template.render() {
