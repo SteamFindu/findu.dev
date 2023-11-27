@@ -1,18 +1,9 @@
-use askama::Template;
-use axum::{
-    http::StatusCode,
-    response::{Html, IntoResponse},
-    routing::{get, Router},
-};
+use axum::routing::{get, Router};
 use axum_server::tls_rustls::RustlsConfig;
 use std::{net::SocketAddr, path::PathBuf};
 use tower_http::services::ServeDir;
 
-#[derive(Debug, Template)]
-#[template(path = "index.html")]
-pub struct SiteTemplate<'a> {
-    pub site_title: &'a str,
-}
+mod routers;
 
 #[tokio::main]
 async fn main() {
@@ -25,8 +16,6 @@ async fn main() {
         .run(&connpool)
         .await
         .expect("Failed to run migrations");
-
-    // ---- TLS ----
 
     // ---- ROUTES ----
     let routes = Router::new()
@@ -59,16 +48,7 @@ async fn main() {
 }
 
 fn routes() -> Router {
-    Router::new().route("/", get(site_index))
-}
-
-async fn site_index() -> impl IntoResponse {
-    let template = SiteTemplate {
-        site_title: "index",
-    };
-
-    match template.render() {
-        Ok(html) => Html(html).into_response(),
-        Err(_) => (StatusCode::INTERNAL_SERVER_ERROR, "try again later").into_response(),
-    }
+    Router::new()
+        .route("/", get(routers::site_index))
+        .route("/about", get(routers::site_about))
 }

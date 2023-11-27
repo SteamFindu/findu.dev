@@ -4,13 +4,11 @@
 		<title>{{ site_title }}</title>
         <script src="https://unpkg.com/htmx.org@1.9.9" integrity="sha384-QFjmbokDn2DjBjq+fM+8LUIVrAgqcNW2s0PjAxHETgRn9l4fvX31ZxDxvwQnyMOX" crossorigin="anonymous"></script>
 		<link href="/assets/base.css" rel="stylesheet" type="text/css">
+        {% block options %}
+        {% endblock options %}
 	</head>
-
 	<body>
-        <div id="header">
-        {% block header %}
-        {% endblock header %}
-        </div>
+        {% include "navbar.html" %}
 		<div id="contents">
 		{% block content %}
 		{% endblock content %}
