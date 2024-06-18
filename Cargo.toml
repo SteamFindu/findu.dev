@@ -18,4 +18,4 @@ rustls = {version= "0.22.1"}
 axum-server = {version = "0.6.0", features=["tls-rustls"]}
 
 [dev-dependencies]
-reqwest = "0.11.22"
+reqwest = "0.12.5"
