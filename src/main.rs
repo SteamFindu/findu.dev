@@ -1,28 +1,72 @@
-use axum::routing::{get, Router};
-use axum_server::tls_rustls::RustlsConfig;
-use std::{net::SocketAddr, path::PathBuf};
-use tower_http::services::ServeDir;
+mod config;
+mod db;
+mod dtos;
+mod error;
+mod handler;
+mod middleware;
+mod models;
+mod routes;
+mod utils;
 
-mod routers;
+use std::sync::Arc;
+
+use config::Config;
+use db::DBClient;
+use dotenv::dotenv;
+use minijinja::{path_loader, Environment};
+use routes::create_router;
+use sqlx::postgres::PgPoolOptions;
+
+// debug
+use tracing_subscriber::filter::LevelFilter;
+
+#[derive(Debug, Clone)]
+pub struct AppState {
+    pub env: Config,
+    pub db_client: DBClient,
+    pub tpl_env: Environment<'static>,
+}
 
 #[tokio::main]
 async fn main() {
-    // ---- POSTGRES ----
-    let connectionstring = "postgresql://postgres:password@localhost/test";
-    let connpool = sqlx::postgres::PgPool::connect(connectionstring)
-        .await
-        .expect("Could not connect to the database");
-    sqlx::migrate!("./migrations")
-        .run(&connpool)
-        .await
-        .expect("Failed to run migrations");
+    // Diagnostics and debugging
+    tracing_subscriber::fmt()
+        .with_max_level(LevelFilter::DEBUG)
+        .init();
 
-    // ---- ROUTES ----
-    let routes = Router::new()
-        .merge(routes())
-        .nest_service("/assets", ServeDir::new("assets"));
+    dotenv().ok();
 
-    // ---- SERVER ----
+    let config = Config::init();
+
+    let pool = match PgPoolOptions::new()
+        .max_connections(10)
+        .connect(&config.database_url)
+        .await
+    {
+        Ok(pool) => {
+            println!("Connected to database");
+            pool
+        }
+        Err(err) => {
+            println!("Failed to connect to the database: {:?}", err);
+            std::process::exit(1);
+        }
+    };
+
+    let db_client = DBClient::new(pool);
+
+    let mut tpl_env = Environment::new();
+    tpl_env.set_loader(path_loader("public"));
+
+    let app_state = AppState {
+        env: config.clone(),
+        db_client,
+        tpl_env,
+    };
+
+    let app = create_router(Arc::new(app_state.clone()));
+
+    /*
     if cfg!(debug_assertions) {
         let addr = SocketAddr::from(([127, 0, 0, 1], 3000));
         println!("listening on {addr}");
@@ -45,10 +89,11 @@ async fn main() {
             .await
             .unwrap();
     };
-}
+    */
 
-fn routes() -> Router {
-    Router::new()
-        .route("/", get(routers::site_index))
-        .route("/about", get(routers::site_about))
+    let listener = tokio::net::TcpListener::bind(format!("0.0.0.0:{}", &config.port))
+        .await
+        .unwrap();
+
+    axum::serve(listener, app).await.unwrap();
 }
