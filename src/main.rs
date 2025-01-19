@@ -69,12 +69,28 @@ async fn main() {
 
     let app = create_router(Arc::new(app_state.clone()));
 
-    let keyconfig = RustlsConfig::from_pem_file(
-        PathBuf::from("/etc/letsencrypt/live/findu.dev/cert.pem"),
-        PathBuf::from("/etc/letsencrypt/live/findu.dev/privkey.pem"),
-    )
-    .await
-    .unwrap();
+    if cfg!(debug_assertions) {
+        let addr = SocketAddr::from(([127, 0, 0, 1], 3000));
+        println!("listening on {addr}");
+        axum_server::bind(addr)
+            .serve(app.into_make_service())
+            .await
+            .unwrap();
+    } else {
+        let keyconfig = RustlsConfig::from_pem_file(
+            PathBuf::from("/etc/letsencrypt/live/findu.dev/cert.pem"),
+            PathBuf::from("/etc/letsencrypt/live/findu.dev/privkey.pem"),
+        )
+        .await
+        .unwrap();
+
+        let addr = SocketAddr::from(([0, 0, 0, 0], config.port));
+        println!("listening on {addr}");
+        axum_server::bind_rustls(addr, keyconfig)
+            .serve(app.into_make_service())
+            .await
+            .unwrap();
+    };
 
     /*
     let listener = tokio::net::TcpListener::bind(format!("0.0.0.0:{}", &config.port))
@@ -83,11 +99,4 @@ async fn main() {
 
     axum::serve(listener, app).await.unwrap();
     */
-
-    let addr = SocketAddr::from(([127, 0, 0, 1], config.port));
-
-    axum_server::bind_rustls(addr, keyconfig)
-        .serve(app.into_make_service())
-        .await
-        .unwrap();
 }
