@@ -3,7 +3,8 @@ pub struct Config {
     pub database_url: String,
     pub jwt_secret: String,
     pub jwt_maxage: i64,
-    pub port: u16,
+    pub http: u16,
+    pub https: u16,
 }
 
 impl Config {
@@ -16,7 +17,8 @@ impl Config {
             database_url,
             jwt_secret,
             jwt_maxage: jwt_maxage.parse::<i64>().unwrap(),
-            port: 433,
+            http: 80,
+            https: 433,
         }
     }
 }
