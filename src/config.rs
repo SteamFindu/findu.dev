@@ -18,7 +18,7 @@ impl Config {
             jwt_secret,
             jwt_maxage: jwt_maxage.parse::<i64>().unwrap(),
             http: 80,
-            https: 433,
+            https: 443,
         }
     }
 }
