@@ -32,6 +32,7 @@ pub fn create_router(app_state: Arc<AppState>) -> Router {
         .route_service("/users", ServeFile::new("public/user/users.html"))
         .nest("/", public_handler().layer(middleware::from_fn(auth)))
         .nest_service("/styles", ServeDir::new("public/styles"))
+        .nest_service("/files", ServeDir::new("public/files"))
         .layer(TraceLayer::new_for_http())
         .layer(Extension(app_state.clone()));
 
