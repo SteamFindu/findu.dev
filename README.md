@@ -5,6 +5,7 @@ Backend for the website
 * Rust
 * Postgresql
 * Json Web Token
+* tailwind (frontend)
 
 # Requirements
 * Rust > 1.82 (including cargo)

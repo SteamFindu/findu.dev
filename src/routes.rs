@@ -13,7 +13,7 @@ use crate::{
 pub fn create_router(app_state: Arc<AppState>) -> Router {
     let content_route = Router::new()
         .route_service("/", ServeFile::new("public/index.html"))
-        .route_service("/about", ServeFile::new("public/about.html"))
+        //.route_service("/about", ServeFile::new("public/about.html"))
         .route_service("/contact", ServeFile::new("public/contact.html"))
         .route_service("/login", ServeFile::new("public/login.html"))
         .route_service("/register", ServeFile::new("public/register.html"))
