@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Users</title>
+</head>
+<body>
+  
+  <h1>list of users information</h1>
+    
+  <ul id="listdiv">
+    
+  </ul>
+    
+    <div>
+      <a href="/me">Return</a>
+    </div>
+    <script>
+        async function getData() {
+            const url = "/api/user/users";
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                  throw new Error(`Response status: ${response.status}`);
+                }
+
+                return await response.json();
+            } catch (error) {
+                console.error(error.message);
+            }
+        }
+
+        const printList = async () => {
+            const data = await getData()
+            const users = data.users
+
+            console.log(users)
+
+            const listUl = document.getElementById('listdiv')
+
+            for (let i = 0; i < users.length; i++) {
+                const listItem = document.createElement('li')
+                listItem.textContent = `${users[i].username} - ${users[i].role}`
+                listUl.appendChild(listItem)
+            }
+
+        }
+
+        printList()
+
+
+/*
+*/
+
+    </script>
+</body>
+</html>
+

@@ -1,4 +1,5 @@
 /target
 /assets/*
-/public/*
+/public/files/*
+/public/node_modules
 .env
