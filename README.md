@@ -1,5 +1,5 @@
 # Findu.dev
-Backend for the website
+Code for the website
 
 # Technologies
 * Rust
