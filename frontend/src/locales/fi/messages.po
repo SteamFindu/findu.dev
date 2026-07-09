@@ -1,0 +1,261 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2026-07-09 18:45+0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: fi\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#: src/components/Layout.tsx:37
+#: src/components/Layout.tsx:89
+msgid "Projects"
+msgstr ""
+
+#: src/pages/Home.tsx:42
+msgid "Hi"
+msgstr ""
+
+#: src/pages/Login.tsx:24
+msgid "Login failed. Please try again."
+msgstr ""
+
+#: src/pages/Contact.tsx:86
+msgid "Content"
+msgstr ""
+
+#: src/pages/UserDashboard.tsx:32
+msgid "Failed to fetch users"
+msgstr ""
+
+#: src/components/Layout.tsx:53
+msgid "Dashboard"
+msgstr ""
+
+#: src/pages/Login.tsx:43
+#: src/pages/Register.tsx:55
+#: src/pages/UserDashboard.tsx:69
+msgid "Username"
+msgstr ""
+
+#: src/pages/ChangePassword.tsx:78
+msgid "New Password"
+msgstr ""
+
+#: src/pages/NotFound.tsx:8
+msgid "Page not found"
+msgstr ""
+
+#: src/pages/Login.tsx:57
+#: src/pages/Register.tsx:70
+msgid "Password"
+msgstr ""
+
+#: src/pages/Register.tsx:108
+msgid "Already have an account?"
+msgstr ""
+
+#: src/pages/ChangePassword.tsx:27
+msgid "New passwords do not match"
+msgstr ""
+
+#: src/pages/ChangePassword.tsx:63
+msgid "Current Password"
+msgstr ""
+
+#: src/pages/UserDashboard.tsx:51
+msgid "Change Name"
+msgstr ""
+
+#: src/pages/ChangeName.tsx:65
+#: src/pages/ChangePassword.tsx:111
+msgid "Update"
+msgstr ""
+
+#: src/pages/UserDashboard.tsx:70
+msgid "Role"
+msgstr ""
+
+#: src/pages/Contact.tsx:106
+msgid "Send"
+msgstr ""
+
+#: src/pages/ChangeName.tsx:41
+msgid "Username changed successfully!"
+msgstr ""
+
+#: src/pages/Home.tsx:30
+msgid "Competences:"
+msgstr ""
+
+#: src/pages/Contact.tsx:39
+msgid "Message sent successfully!"
+msgstr ""
+
+#: src/pages/Contact.tsx:52
+msgid "Email"
+msgstr ""
+
+#: src/pages/Home.tsx:47
+msgid "I have experience using many different programming languages including rust, javascript, c++ and python. I have spent time working on projects inside companies with a team and by myself."
+msgstr ""
+
+#: src/pages/Projects.tsx:7
+msgid "You are on it! Built using rust for the backend, postgres for the database and tailwind to help with styling. Currently running on a DigitalOcean droplet."
+msgstr ""
+
+#: src/pages/ChangeName.tsx:65
+#: src/pages/ChangePassword.tsx:111
+msgid "Updating..."
+msgstr ""
+
+#: src/pages/Home.tsx:50
+msgid "This site hosts some of the projects I have worked on and serves as a personal portfolio"
+msgstr ""
+
+#: src/pages/UserDashboard.tsx:48
+msgid "Users"
+msgstr ""
+
+#: src/pages/Contact.tsx:27
+msgid "Failed to send message. Please try again."
+msgstr ""
+
+#: src/pages/Home.tsx:8
+msgid "Working with technology"
+msgstr ""
+
+#: src/pages/Contact.tsx:69
+msgid "Subject"
+msgstr ""
+
+#: src/pages/ChangePassword.tsx:46
+#: src/pages/UserDashboard.tsx:54
+msgid "Change Password"
+msgstr ""
+
+#: src/pages/Login.tsx:74
+msgid "Signing in..."
+msgstr ""
+
+#: src/pages/UserDashboard.tsx:42
+msgid "Loading..."
+msgstr ""
+
+#: src/pages/ChangeName.tsx:23
+msgid "Failed to change username"
+msgstr ""
+
+#: src/pages/Home.tsx:53
+msgid "Contact me at"
+msgstr ""
+
+#: src/pages/ChangeName.tsx:31
+msgid "Change Username"
+msgstr ""
+
+#: src/pages/NotFound.tsx:10
+msgid "Return to home"
+msgstr ""
+
+#: src/pages/UserDashboard.tsx:71
+msgid "Created"
+msgstr ""
+
+#: src/components/Layout.tsx:68
+#: src/pages/Login.tsx:81
+#: src/pages/Register.tsx:45
+#: src/pages/Register.tsx:103
+msgid "Register"
+msgstr ""
+
+#: src/components/Layout.tsx:34
+#: src/components/Layout.tsx:86
+msgid "Home"
+msgstr ""
+
+#: src/pages/Projects.tsx:34
+msgid "Github"
+msgstr ""
+
+#: src/components/Layout.tsx:40
+#: src/components/Layout.tsx:92
+msgid "Contact"
+msgstr ""
+
+#: src/pages/ChangePassword.tsx:38
+msgid "Failed to change password"
+msgstr ""
+
+#: src/pages/Login.tsx:79
+msgid "Don't have an account?"
+msgstr ""
+
+#: src/pages/Register.tsx:27
+msgid "Passwords do not match"
+msgstr ""
+
+#: src/pages/Login.tsx:33
+#: src/pages/Login.tsx:74
+#: src/pages/Register.tsx:110
+msgid "Sign In"
+msgstr ""
+
+#: src/components/Layout.tsx:59
+msgid "Logout"
+msgstr ""
+
+#: src/pages/Register.tsx:85
+msgid "Confirm Password"
+msgstr ""
+
+#: src/pages/Home.tsx:9
+msgid "Problem solving"
+msgstr ""
+
+#: src/pages/Projects.tsx:12
+msgid "Small rust script for parsing yule logs created by wacup and uploading the songs to listenbrainz"
+msgstr ""
+
+#: src/pages/Home.tsx:10
+msgid "Learning new things"
+msgstr ""
+
+#: src/pages/ChangeName.tsx:48
+msgid "New Username"
+msgstr ""
+
+#: src/pages/Register.tsx:103
+msgid "Registering..."
+msgstr ""
+
+#: src/pages/ChangePassword.tsx:56
+msgid "Password changed successfully!"
+msgstr ""
+
+#: src/pages/Login.tsx:85
+#: src/pages/Register.tsx:114
+msgid "Return"
+msgstr ""
+
+#: src/pages/Register.tsx:36
+msgid "Registration failed. Please try again."
+msgstr ""
+
+#: src/pages/Contact.tsx:34
+msgid "Contact Form"
+msgstr ""
+
+#: src/pages/ChangePassword.tsx:93
+msgid "Confirm New Password"
+msgstr ""
+
+#: src/components/Layout.tsx:65
+msgid "Login"
+msgstr ""

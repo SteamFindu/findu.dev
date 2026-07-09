@@ -5,7 +5,6 @@
       "include": ["src"]
     }
   ],
-  "compileNamespace": "es6",
   "sourceLocale": "en",
   "locales": ["en", "fi"],
   "orderBy": "messageId"
