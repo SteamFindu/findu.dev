@@ -4,12 +4,13 @@ import { lingui } from '@lingui/vite-plugin'
 
 export default defineConfig({
   plugins: [
+    // Run lingui plugin before the React plugin so macros are handled during compilation
+    lingui(),
     react({
       babel: {
         plugins: ["@lingui/babel-plugin-lingui-macro"],
       },
     }),
-    lingui(),
   ],
   server: {
     proxy: {
