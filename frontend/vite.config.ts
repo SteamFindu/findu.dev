@@ -8,7 +8,8 @@ export default defineConfig({
     lingui(),
     react({
       babel: {
-        plugins: ["@lingui/babel-plugin-lingui-macro"],
+        // Use the generic macros plugin so @lingui/macro is executed at compile time
+        plugins: ["macros"],
       },
     }),
   ],
