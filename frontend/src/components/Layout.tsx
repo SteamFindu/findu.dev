@@ -1,12 +1,11 @@
 import { Outlet, Link, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { t } from '@lingui/macro'
-import { useI18n } from '@lingui/react'
+import { i18n } from "@lingui/core";
 import { getAuthToken, logout } from '../utils/auth'
 
 export default function Layout() {
   const navigate = useNavigate()
-  const { i18n } = useI18n()
   const [isAuthenticated, setIsAuthenticated] = useState(!!getAuthToken())
 
   useEffect(() => {

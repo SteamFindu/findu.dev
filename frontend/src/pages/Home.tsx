@@ -1,9 +1,7 @@
 import { t } from '@lingui/macro'
-import { useI18n } from '@lingui/react'
+import { i18n } from "@lingui/core";
 
 export default function Home() {
-  const { i18n } = useI18n()
-
   const competences = [
     t`Working with technology`,
     t`Problem solving`,
