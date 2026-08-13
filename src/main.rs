@@ -8,13 +8,6 @@ mod models;
 mod routes;
 mod utils;
 
-use axum::{
-    extract::Host,
-    handler::HandlerWithoutStateExt,
-    http::{uri::Authority, StatusCode, Uri},
-    response::Redirect,
-    BoxError,
-};
 use axum_server::tls_rustls::RustlsConfig;
 use std::net::SocketAddr;
 use std::path::PathBuf;

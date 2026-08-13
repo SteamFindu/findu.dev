@@ -39,14 +39,7 @@ export default function Home() {
         <div className="w-full lg:w-1/2 p-2">
           <p>{t`Hi`}</p>
           <br />
-          <p>{description}</p>
-          <br />
-          <p>
-            {t`I have experience using many different programming languages including rust, javascript, c++ and python. I have spent time working on projects inside companies with a team and by myself.`}
-          </p>
-          <br />
-          <p>{t`This site hosts some of the projects I have worked on and serves as a personal portfolio`}</p>
-          <br />
+          <p>{t`description`}</p>
           <p className="break-words">
             {t`Contact me at`}{' '}
             <a href="mailto:arttu.hiekkanen@hotmail.com" className="text-blue-600">

@@ -46,28 +46,6 @@ export default function Layout() {
             >
               {i18n.locale === 'en' ? 'FI' : 'EN'}
             </button>
-            {isAuthenticated ? (
-              <>
-                <Link to="/users" className="text-sm/6 font-semibold text-gray-900">
-                  {t`Dashboard`}
-                </Link>
-                <button
-                  onClick={handleLogout}
-                  className="text-sm/6 font-semibold text-gray-900 hover:text-gray-600"
-                >
-                  {t`Logout`}
-                </button>
-              </>
-            ) : (
-              <>
-                <Link to="/login" className="text-sm/6 font-semibold text-gray-900">
-                  {t`Login`}
-                </Link>
-                <Link to="/register" className="text-sm/6 font-semibold text-gray-900">
-                  {t`Register`}
-                </Link>
-              </>
-            )}
           </div>
         </nav>
       </header>

@@ -5,9 +5,11 @@ import { i18n } from '@lingui/core'
 import App from './App'
 import './index.css'
 
-// Load default locale
+// Load locales
 import { messages as enMessages } from './locales/en/messages'
+import { messages as fiMessages } from './locales/fi/messages'
 i18n.load('en', enMessages)
+i18n.load('fi', fiMessages)
 i18n.activate('en')
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

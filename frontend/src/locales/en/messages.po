@@ -14,7 +14,7 @@ msgstr ""
 "Plural-Forms: \n"
 
 #: src/components/Layout.tsx:36
-#: src/components/Layout.tsx:88
+#: src/components/Layout.tsx:66
 msgid "Projects"
 msgstr "Projects"
 
@@ -35,8 +35,8 @@ msgid "Failed to fetch users"
 msgstr "Failed to fetch users"
 
 #: src/components/Layout.tsx:52
-msgid "Dashboard"
-msgstr "Dashboard"
+#~ msgid "Dashboard"
+#~ msgstr "Dashboard"
 
 #: src/pages/Login.tsx:43
 #: src/pages/Register.tsx:55
@@ -102,10 +102,6 @@ msgstr "Message sent successfully!"
 msgid "Email"
 msgstr "Email"
 
-#: src/pages/Home.tsx:45
-msgid "I have experience using many different programming languages including rust, javascript, c++ and python. I have spent time working on projects inside companies with a team and by myself."
-msgstr "I have experience using many different programming languages including rust, javascript, c++ and python. I have spent time working on projects inside companies with a team and by myself."
-
 #: src/pages/Projects.tsx:7
 msgid "You are on it! Built using rust for the backend, postgres for the database and tailwind to help with styling. Currently running on a DigitalOcean droplet."
 msgstr "You are on it! Built using rust for the backend, postgres for the database and tailwind to help with styling. Currently running on a DigitalOcean droplet."
@@ -114,10 +110,6 @@ msgstr "You are on it! Built using rust for the backend, postgres for the databa
 #: src/pages/ChangePassword.tsx:111
 msgid "Updating..."
 msgstr "Updating..."
-
-#: src/pages/Home.tsx:48
-msgid "This site hosts some of the projects I have worked on and serves as a personal portfolio"
-msgstr "This site hosts some of the projects I have worked on and serves as a personal portfolio"
 
 #: src/pages/UserDashboard.tsx:48
 msgid "Users"
@@ -152,7 +144,7 @@ msgstr "Loading..."
 msgid "Failed to change username"
 msgstr "Failed to change username"
 
-#: src/pages/Home.tsx:51
+#: src/pages/Home.tsx:44
 msgid "Contact me at"
 msgstr "Contact me at"
 
@@ -168,7 +160,10 @@ msgstr "Return to home"
 msgid "Created"
 msgstr "Created"
 
-#: src/components/Layout.tsx:67
+#: src/pages/Home.tsx:42
+msgid "description"
+msgstr "description"
+
 #: src/pages/Login.tsx:81
 #: src/pages/Register.tsx:45
 #: src/pages/Register.tsx:103
@@ -176,7 +171,7 @@ msgid "Register"
 msgstr "Register"
 
 #: src/components/Layout.tsx:33
-#: src/components/Layout.tsx:85
+#: src/components/Layout.tsx:63
 msgid "Home"
 msgstr "Home"
 
@@ -185,7 +180,7 @@ msgid "Github"
 msgstr "Github"
 
 #: src/components/Layout.tsx:39
-#: src/components/Layout.tsx:91
+#: src/components/Layout.tsx:69
 msgid "Contact"
 msgstr "Contact"
 
@@ -206,10 +201,6 @@ msgstr "Passwords do not match"
 #: src/pages/Register.tsx:110
 msgid "Sign In"
 msgstr "Sign In"
-
-#: src/components/Layout.tsx:58
-msgid "Logout"
-msgstr "Logout"
 
 #: src/pages/Register.tsx:85
 msgid "Confirm Password"
@@ -257,5 +248,5 @@ msgid "Confirm New Password"
 msgstr "Confirm New Password"
 
 #: src/components/Layout.tsx:64
-msgid "Login"
-msgstr "Login"
+#~ msgid "Login"
+#~ msgstr "Login"
