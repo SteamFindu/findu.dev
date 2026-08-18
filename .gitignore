@@ -1,8 +1,7 @@
 /target
 /assets/*
-/public/files/*
+public/
 locales/
-/public/node_modules
 .env
 
 # Logs

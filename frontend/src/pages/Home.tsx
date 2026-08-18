@@ -8,10 +8,6 @@ export default function Home() {
     t`Learning new things`,
   ]
 
-  const description = i18n.locale === 'en'
-    ? 'I am a student studying IT, mostly interested in programming and related technical work.'
-    : 'Olen IT-opiskelija, joka on pääasiassa kiinnostunut ohjelmoinnista ja siihen liittyvästä teknisesta työstä.'
-
   return (
     <div className="max-w-6xl w-full">
       <div className="flex justify-center">
@@ -22,7 +18,7 @@ export default function Home() {
         <div className="w-full lg:w-1/2 flex-col p-2">
           <div className="grid place-content-center">
             <div id="imgdiv" className="m-2">
-              <img src="/files/me.jpg" alt="profile" className="md:max-w-xs rounded-md" />
+              <img src="/me.jpg" alt="profile" className="md:max-w-xs rounded-md" />
             </div>
             <div className="mt-2">
               <h2 className="font-bold">{t`Competences:`}</h2>

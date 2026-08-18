@@ -28,19 +28,19 @@ React + TypeScript + Vite frontend for findu.dev website with multi-language sup
 ### Prerequisites
 
 - Node.js >= 18
-- npm or yarn
+- pnpm
 
 ### Installation
 
 ```bash
 cd frontend
-npm install
+pnpm install
 ```
 
 ### Development
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 The development server will start at `http://localhost:5173`
@@ -48,7 +48,7 @@ The development server will start at `http://localhost:5173`
 ### Building
 
 ```bash
-npm run build
+pnpm run build
 ```
 
 Production build will be in the `dist` directory.
@@ -58,7 +58,7 @@ Production build will be in the `dist` directory.
 #### Extract messages
 
 ```bash
-npm run extract
+pnpm run extract
 ```
 
 This generates message catalogs from all `t\`message\`` strings.
@@ -66,7 +66,7 @@ This generates message catalogs from all `t\`message\`` strings.
 #### Compile translations
 
 ```bash
-npm run compile
+pnpm run compile
 ```
 
 This compiles the .po files to JS.
@@ -88,27 +88,3 @@ The frontend communicates with the Rust backend via these endpoints:
 - `GET /api/user/all` - List all users
 - `PUT /api/user/changename` - Change username
 - `PUT /api/user/changepassword` - Change password
-
-## Architecture
-
-```
-src/
-├── components/
-│   └── Layout.tsx          # Main layout with nav/footer
-├── pages/
-│   ├── Home.tsx
-│   ├── Projects.tsx
-│   ├── Contact.tsx
-│   ├── Login.tsx
-│   ├── Register.tsx
-│   ├── UserDashboard.tsx
-│   ├── ChangeName.tsx
-│   ├── ChangePassword.tsx
-│   └── NotFound.tsx
-├── utils/
-│   ├── api.ts             # Axios instance with interceptors
-│   └── auth.ts            # Authentication helpers
-├── locales/
-│   └── en/messages.ts     # English translations
-└── App.tsx                # Router setup
-```

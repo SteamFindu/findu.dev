@@ -4,12 +4,17 @@ export default function Projects() {
   const projects = [
     {
       title: 'findu.dev',
-      description: t`You are on it! Built using rust for the backend, postgres for the database and tailwind to help with styling. Currently running on a DigitalOcean droplet.`,
+      description: t`findu.dev description`,
       url: 'https://github.com/SteamFindu/findu.dev',
     },
     {
       title: 'yule to brainz',
-      description: t`Small rust script for parsing yule logs created by wacup and uploading the songs to listenbrainz`,
+      description: t`yule to brainz description`,
+      url: 'https://github.com/SteamFindu/yule-to-brainz',
+    },
+    {
+      title: 'FPSdemo',
+      description: t`FPSdemo description`,
       url: 'https://github.com/SteamFindu/yule-to-brainz',
     },
   ]

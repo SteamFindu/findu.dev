@@ -7,6 +7,7 @@ import { getAuthToken, logout } from '../utils/auth'
 export default function Layout() {
   const navigate = useNavigate()
   const [isAuthenticated, setIsAuthenticated] = useState(!!getAuthToken())
+  const [i18nLoc, setI18nLoc] = useState("en");
 
   useEffect(() => {
     const token = getAuthToken()
@@ -21,6 +22,7 @@ export default function Layout() {
 
   const toggleLanguage = () => {
     const newLang = i18n.locale === 'en' ? 'fi' : 'en'
+    const setI18nLoc = i18nLoc === 'en' ? 'fi' : 'en'
     i18n.activate(newLang)
   }
 
@@ -35,16 +37,13 @@ export default function Layout() {
             <Link to="/projects" className="text-sm/6 font-semibold text-gray-900">
               {t`Projects`}
             </Link>
-            <Link to="/contact" className="text-sm/6 font-semibold text-gray-900">
-              {t`Contact`}
-            </Link>
           </div>
           <div className="flex gap-x-4 items-center">
             <button
               onClick={toggleLanguage}
               className="text-sm/6 font-semibold text-gray-900 hover:text-gray-600"
             >
-              {i18n.locale === 'en' ? 'FI' : 'EN'}
+              {i18nLoc === 'en' ? 'FI' : 'EN'}
             </button>
           </div>
         </nav>
@@ -64,9 +63,6 @@ export default function Layout() {
             </Link>
             <Link to="/projects" className="text-sm/6 font-semibold text-gray-900">
               {t`Projects`}
-            </Link>
-            <Link to="/contact" className="text-sm/6 font-semibold text-gray-900">
-              {t`Contact`}
             </Link>
           </div>
         </nav>
