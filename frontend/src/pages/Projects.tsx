@@ -20,22 +20,22 @@ export default function Projects() {
   ]
 
   return (
-    <div className="max-w-6xl w-full">
+    <div className="max-w-6xl w-full mx-auto px-6">
       <div className="flex justify-center">
-        <h1 className="text-3xl font-bold">Arttu Hiekkanen</h1>
+        <h1 className="text-4xl md:text-5xl font-frutiger font-semibold tracking-tight mt-6">Arttu Hiekkanen</h1>
       </div>
 
-      <div className="flex flex-col gap-6 top-0 lg:w-full mt-10">
+      <div className="flex flex-col gap-6 w-full mt-10 lg:w-full">
         {projects.map((project) => (
-          <div key={project.title} className="flex flex-col bg-gray-200 p-10 rounded-xl">
+          <div key={project.title} className="flex flex-col bg-white/60 card-aero p-6 rounded-2xl border border-slate-100 shadow-soft-lg">
             <div className="w-full">
-              <h2 className="flex text-2xl">{project.title}</h2>
+              <h2 className="text-2xl font-semibold text-slate-900">{project.title}</h2>
             </div>
-            <div className="w-full mt-5">
-              <p className="flex">{project.description}</p>
+            <div className="w-full mt-3">
+              <p className="text-sm text-slate-700">{project.description}</p>
             </div>
-            <div className="w-full mt-5">
-              <a className="flex w-20 text-blue-600 hover:underline" href={project.url}>
+            <div className="w-full mt-4">
+              <a className="inline-flex items-center gap-2 text-aero-600 font-medium hover:underline" href={project.url}>
                 {t`Github`}
               </a>
             </div>

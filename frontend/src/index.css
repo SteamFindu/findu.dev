@@ -1,6 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root{
+  --aero-1: #eef7ff;
+  --aero-2: #d7eeff;
+  --glass-bg: rgba(255,255,255,0.65);
+}
 
 html, body, #root {
   height: 100%;
@@ -9,21 +16,45 @@ html, body, #root {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
     'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(180deg, var(--aero-1) 0%, #ffffff 70%);
+  color: #0f172a; /* slate-900 */
 }
 
+/* subtle full-page gradient accent */
 .bgdiv {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  opacity: 0.1;
+  background: radial-gradient(600px 400px at 10% 20%, rgba(95,201,255,0.08), transparent 15%),
+              radial-gradient(500px 350px at 90% 80%, rgba(138,105,255,0.06), transparent 20%);
+  opacity: 1;
   z-index: 0;
   pointer-events: none;
+}
+
+/* reusable card style for that aero glass look */
+.card-aero{
+  background: linear-gradient(180deg, rgba(255,255,255,0.75), rgba(255,255,255,0.6));
+  backdrop-filter: blur(6px) saturate(110%);
+  -webkit-backdrop-filter: blur(6px) saturate(110%);
+  border: 1px solid rgba(15,23,42,0.04);
+  border-radius: 1rem;
+}
+
+/* make images a bit softer */
+.img-rounded{
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 24px rgba(16,24,40,0.06);
+}
+
+/* print-friendly small tweaks */
+@media (prefers-reduced-motion: reduce){
+  * { transition: none !important; }
 }

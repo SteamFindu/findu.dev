@@ -9,22 +9,23 @@ export default function Home() {
   ]
 
   return (
-    <div className="max-w-6xl w-full">
+    <div className="max-w-6xl w-full mx-auto px-6">
       <div className="flex justify-center">
-        <h1 className="text-3xl font-bold">Arttu Hiekkanen</h1>
+        <h1 className="text-4xl md:text-5xl font-frutiger font-semibold tracking-tight mt-6">Arttu Hiekkanen</h1>
       </div>
 
-      <div className="flex flex-col lg:flex-row top-0 w-full mt-10 gap-8">
+      <div className="flex flex-col lg:flex-row w-full mt-10 gap-8">
         <div className="w-full lg:w-1/2 flex-col p-2">
           <div className="grid place-content-center">
             <div id="imgdiv" className="m-2">
-              <img src="/me.jpg" alt="profile" className="md:max-w-xs rounded-md" />
+              <img src="/me.jpg" alt="profile" className="md:max-w-xs img-rounded" />
             </div>
-            <div className="mt-2">
-              <h2 className="font-bold">{t`Competences:`}</h2>
-              <ul className="mt-2">
+            <div className="mt-4 w-full card-aero p-6 shadow-soft-lg">
+              <h2 className="font-semibold text-lg">{t`Competences:`}</h2>
+              <ul className="mt-3 space-y-2 text-sm text-slate-700">
                 {competences.map((comp, idx) => (
-                  <li key={idx} className="mt-2">
+                  <li key={idx} className="flex items-center">
+                    <span className="inline-block w-2 h-2 bg-aero-500 rounded-full mr-3" />
                     {comp}
                   </li>
                 ))}
@@ -33,15 +34,17 @@ export default function Home() {
           </div>
         </div>
         <div className="w-full lg:w-1/2 p-2">
-          <p>{t`Hi`}</p>
-          <br />
-          <p>{t`description`}</p>
-          <p className="break-words">
-            {t`Contact me at`}{' '}
-            <a href="mailto:arttu.hiekkanen@hotmail.com" className="text-blue-600">
-              arttu.hiekkanen@hotmail.com
-            </a>
-          </p>
+          <div className="card-aero p-6 shadow-soft-lg">
+            <p className="text-base text-slate-800">{t`Hi`}</p>
+            <br />
+            <p className="text-sm text-slate-700">{t`description`}</p>
+            <p className="break-words mt-4 text-sm">
+              {t`Contact me at`}{' '}
+              <a href="mailto:arttu.hiekkanen@hotmail.com" className="text-aero-600 font-medium hover:underline">
+                arttu.hiekkanen@hotmail.com
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </div>
