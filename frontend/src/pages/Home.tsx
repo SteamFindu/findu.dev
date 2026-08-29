@@ -37,7 +37,11 @@ export default function Home() {
           <div className="card-aero p-6 shadow-soft-lg">
             <p className="text-base text-slate-800">{t`Hi`}</p>
             <br />
-            <p className="text-sm text-slate-700">{t`description`}</p>
+            <p className="text-sm text-slate-700">{t`desc1`}</p>
+            <br />
+            <p className="text-sm text-slate-700">{t`desc2`}</p>
+            <br />
+            <p className="text-sm text-slate-700">{t`desc3`}</p>
             <p className="break-words mt-4 text-sm">
               {t`Contact me at`}{' '}
               <a href="mailto:arttu.hiekkanen@hotmail.com" className="text-aero-600 font-medium hover:underline">
