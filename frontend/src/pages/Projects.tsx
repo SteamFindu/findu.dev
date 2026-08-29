@@ -20,7 +20,7 @@ export default function Projects() {
   ]
 
   return (
-    <div className="max-w-6xl w-full mx-auto px-6">
+    <div className="max-w-6xl w-full mx-auto px-6 h-max">
       <div className="flex justify-center">
         <h1 className="text-4xl md:text-5xl font-frutiger font-semibold tracking-tight mt-6">Arttu Hiekkanen</h1>
       </div>

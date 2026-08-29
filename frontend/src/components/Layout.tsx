@@ -27,7 +27,7 @@ export default function Layout() {
   }
 
   return (
-    <div className="bg-white min-h-screen overflow-hidden flex flex-col w-full">
+    <div className="min-h-screen overflow-hidden flex flex-col w-full">
       <header className="sticky inset-x-0 top-0 z-50 bg-gray-300 bg-opacity-50">
         <nav className="max-lg:hidden flex items-center justify-between p-6 px-8" aria-label="Global">
           <div className="flex gap-x-12 lg:justify-center flex-1">

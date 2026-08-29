@@ -18,7 +18,7 @@ export default function Home() {
         <div className="w-full lg:w-1/2 flex-col p-2">
           <div className="grid place-content-center">
             <div id="imgdiv" className="m-2">
-              <img src="/me.jpg" alt="profile" className="md:max-w-xs img-rounded" />
+              <img src="./me.jpg" alt="profile" className="md:max-w-xs img-rounded" />
             </div>
             <div className="mt-4 w-full card-aero p-6 shadow-soft-lg">
               <h2 className="font-semibold text-lg">{t`Competences:`}</h2>
