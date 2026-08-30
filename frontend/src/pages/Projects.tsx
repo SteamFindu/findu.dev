@@ -1,6 +1,8 @@
 import { t } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
 
 export default function Projects() {
+  const { i18n } = useLingui()
   const projects = [
     {
       title: 'findu.dev',

@@ -8,7 +8,8 @@ import BackgroundRipples from "../components/BackgroundRipples";
 export default function Layout() {
   const navigate = useNavigate()
   const [isAuthenticated, setIsAuthenticated] = useState(!!getAuthToken())
-  const [i18nLoc, setI18nLoc] = useState("en");
+  const [i18nLoc, setI18nLoc] = useState(i18n.locale || "en");
+  const [, forceUpdate] = useState({});
 
   useEffect(() => {
     const token = getAuthToken()
@@ -25,6 +26,7 @@ export default function Layout() {
     const newLang = i18n.locale === 'en' ? 'fi' : 'en'
     setI18nLoc(newLang)
     i18n.activate(newLang)
+    forceUpdate({})
   }
 
   return (
