@@ -23,7 +23,7 @@ export default function Layout() {
 
   const toggleLanguage = () => {
     const newLang = i18n.locale === 'en' ? 'fi' : 'en'
-    const setI18nLoc = i18nLoc === 'en' ? 'fi' : 'en'
+    setI18nLoc(newLang)
     i18n.activate(newLang)
   }
 
