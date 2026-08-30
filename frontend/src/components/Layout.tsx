@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { t } from '@lingui/macro'
 import { i18n } from "@lingui/core";
 import { getAuthToken, logout } from '../utils/auth'
+import BackgroundRipples from "../components/BackgroundRipples";
 
 export default function Layout() {
   const navigate = useNavigate()
@@ -48,9 +49,11 @@ export default function Layout() {
           </div>
         </nav>
       </header>
+      <div className="bgdiv h-100%">
 
-      <div className="bgdiv"></div>
+      <BackgroundRipples />
 
+</div>
       <main className="grid min-h-full justify-center px-6 py-24 sm:py-32 lg:px-8 w-full flex-1 overflow-y-scroll z-1 -mt-20">
         <Outlet />
       </main>

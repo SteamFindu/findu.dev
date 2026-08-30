@@ -21,11 +21,11 @@ export default function Projects() {
 
   return (
     <div className="max-w-6xl w-full mx-auto px-6 h-max">
-      <div className="flex justify-center">
-        <h1 className="text-4xl md:text-5xl font-frutiger font-semibold tracking-tight mt-6">Arttu Hiekkanen</h1>
+      <div className="flex justify-center bg-aero-500 card-aero rounded-xl">
+        <h1 className="text-4xl md:text-5xl font-semibold tracking-tight py-2">Arttu Hiekkanen</h1>
       </div>
 
-      <div className="flex flex-col gap-6 w-full mt-10 lg:w-full">
+      <div className="flex flex-col gap-6 w-full mt-10 lg:w-full lg:min-w-10">
         {projects.map((project) => (
           <div key={project.title} className="flex flex-col bg-white/60 card-aero p-6 rounded-2xl border border-slate-100 shadow-soft-lg">
             <div className="w-full">

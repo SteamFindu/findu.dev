@@ -25,7 +25,6 @@ body {
   color: #0f172a; /* slate-900 */
 }
 
-/* subtle full-page gradient accent */
 .bgdiv {
   position: fixed;
   top: 0;
@@ -33,20 +32,25 @@ body {
   width: 100%;
   height: 100%;
   z-index: -10;
-  pointer-events: none;
   opacity: 0.5;
-  background-image:  
-    linear-gradient(30deg, var(--aero-1) 12%, transparent 12.5%, transparent 87%, var(--aero-1) 87.5%, var(--aero-1)), 
-    linear-gradient(150deg, var(--aero-1) 12%, transparent 12.5%, transparent 87%, var(--aero-1) 87.5%, var(--aero-1)), 
-    linear-gradient(30deg, var(--aero-1) 12%, transparent 12.5%, transparent 87%, var(--aero-1) 87.5%, var(--aero-1)), 
-    linear-gradient(150deg, var(--aero-1) 12%, transparent 12.5%, transparent 87%, var(--aero-1) 87.5%, var(--aero-1)), 
-    linear-gradient(60deg, var(--aero-2) 26%, transparent 25.5%, transparent 75%, var(--aero-2) 75%, var(--aero-2)), 
-    linear-gradient(60deg, var(--aero-2) 26%, transparent 25.5%, transparent 75%, var(--aero-2) 75%, var(--aero-2));
-  background-size: 60px 105px;
-  background-position: 0 0, 0 0, 30px 53px, 30px 53px, 0 0, 30px 53px;
+  background-image: url("./public/background.png") ;
+  background-size: 157px 136px;
 }
 
-/* reusable card style for that aero glass look */
+.curtains-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-content {
+  position: relative;
+  z-index: 1;
+}
+
 .card-aero{
   background: linear-gradient(180deg, rgba(255,255,255,0.75), rgba(255,255,255,0.6));
   backdrop-filter: blur(6px) saturate(110%);
@@ -55,13 +59,11 @@ body {
   border-radius: 1rem;
 }
 
-/* make images a bit softer */
 .img-rounded{
   border-radius: 0.75rem;
   box-shadow: 0 8px 24px rgba(16,24,40,0.06);
 }
 
-/* print-friendly small tweaks */
 @media (prefers-reduced-motion: reduce){
   * { transition: none !important; }
 }

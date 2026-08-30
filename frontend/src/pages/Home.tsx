@@ -10,15 +10,15 @@ export default function Home() {
 
   return (
     <div className="max-w-6xl w-full mx-auto px-6">
-      <div className="flex justify-center">
-        <h1 className="text-4xl md:text-5xl font-frutiger font-semibold tracking-tight mt-6">Arttu Hiekkanen</h1>
+      <div className="flex justify-center bg-aero-500 card-aero rounded-xl">
+        <h1 className="text-4xl md:text-5xl font-semibold tracking-tight py-2">Arttu Hiekkanen</h1>
       </div>
 
       <div className="flex flex-col lg:flex-row w-full mt-10 gap-8">
-        <div className="w-full lg:w-1/2 flex-col p-2">
+        <div className="w-full lg:w-1/3 flex-col p-2">
           <div className="grid place-content-center">
-            <div id="imgdiv" className="m-2">
-              <img src="./me.jpg" alt="profile" className="md:max-w-xs img-rounded" />
+            <div id="imgdiv">
+              <img src="/src/public/me.jpg" alt="profile" className="md:max-w-xs img-rounded" />
             </div>
             <div className="mt-4 w-full card-aero p-6 shadow-soft-lg">
               <h2 className="font-semibold text-lg">{t`Competences:`}</h2>
@@ -33,7 +33,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="w-full lg:w-1/2 p-2">
+        <div className="w-full lg:w-2/2 p-2">
           <div className="card-aero p-6 shadow-soft-lg">
             <p className="text-base text-slate-800">{t`Hi`}</p>
             <br />
