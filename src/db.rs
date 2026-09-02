@@ -3,6 +3,7 @@ use sqlx::{Pool, Postgres};
 use uuid::Uuid;
 
 use crate::models::User;
+use crate::models::UserRole;
 
 #[derive(Debug, Clone)]
 pub struct DBClient {
