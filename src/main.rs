@@ -71,9 +71,11 @@ async fn main() {
 
     let app = create_router(Arc::new(app_state.clone()));
 
+        
+    let database_url = std::env::var("DATABASE_URL").expect("DATABASE_URL must be set");
     let keyconfig = RustlsConfig::from_pem_file(
-        PathBuf::from("/etc/letsencrypt/live/findu.dev/cert.pem"),
-        PathBuf::from("/etc/letsencrypt/live/findu.dev/privkey.pem"),
+        PathBuf::from(std::env::var("CERTIFICATE_PATH").expect("CERTIFICATE_PATH must be set")),
+        PathBuf::from(std::env::var("PRIVATEKEY_PATH").expect("PRIVATEKEY_PATH must be set")),
     )
     .await
     .unwrap();
