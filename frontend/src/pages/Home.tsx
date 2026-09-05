@@ -1,6 +1,7 @@
 import { t } from '@lingui/macro'
 import { i18n } from "@lingui/core";
 import { useLingui } from '@lingui/react'
+import me from '/src/public/me.jpg'
 
 export default function Home() {
   const { i18n } = useLingui()
@@ -20,7 +21,7 @@ export default function Home() {
         <div className="w-full lg:w-1/3 flex-col p-2">
           <div className="grid place-content-center">
             <div id="imgdiv">
-              <img src="/src/public/me.jpg" alt="profile" className="md:max-w-xs img-rounded" />
+              <img src={me} alt="profile" className="md:max-w-xs img-rounded" />
             </div>
             <div className="mt-4 w-full card-aero p-6 shadow-soft-lg">
               <h2 className="font-semibold text-lg">{t`Competences:`}</h2>
