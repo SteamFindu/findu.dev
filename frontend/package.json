@@ -18,6 +18,7 @@
     "@lingui/react": "^4.14.1",
     "axios": "^1.6.2",
     "curtainsjs": "^8.1.6",
+    "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "js-cookie": "^3.0.5",
     "react": "^18.2.0",

@@ -4,6 +4,9 @@ import https from 'https'
 import http from 'http'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import dotenv from 'dotenv'
+
+dotenv.config({ path: '../.env' })
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
